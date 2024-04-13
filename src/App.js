@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       {!showLogin ? (
-        <Login onLoginClick={() => setShowLogin(true)} />
+        <Signup onLoginClick={() => setShowLogin(true)} />
       ) : (
         <Login />
       )}
