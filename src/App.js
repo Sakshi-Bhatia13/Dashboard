@@ -1,16 +1,30 @@
 import React, { useState } from 'react';
 import Signup from './components/LoginSignup/Signup';
 import Login from './components/LoginSignup/Login';
+import Dashboard from './components/dashboard';
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const handleSignupSuccess = () => {
+    setShowLogin(true);
+  };
+
+  const handleLoginSuccess = () => {
+    setLoggedIn(true);
+  };
 
   return (
     <div className="App">
-      {!showLogin ? (
-        <Signup onLoginClick={() => setShowLogin(true)} />
+      {!loggedIn ? (
+        !showLogin ? (
+          <Signup onSignupSuccess={handleSignupSuccess} />
+        ) : (
+          <Login onLoginSuccess={handleLoginSuccess} />
+        )
       ) : (
-        <Login />
+        <Dashboard />
       )}
     </div>
   );

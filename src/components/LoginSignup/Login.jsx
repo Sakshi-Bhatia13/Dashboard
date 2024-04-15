@@ -1,24 +1,32 @@
 import React, { useState } from 'react';
 import './LoginSignup.css';
-import Signup from './Signup'; 
+import Dashboard from '../dashboard';
+import img1 from './img1.jpg';
+import appleicon from './apple-logo.png';
+import googleicon from './googleicon.jpg';
+
 const Login = () => {
-  const [showSignup, setShowSignup] = useState(false);
+  const [showDashboard, setShowDashboard] = useState(false);
 
   const handleLoginClick = () => {
-    setShowSignup(true);
+    setShowDashboard(true);
   };
 
   return (
     <div className="homepage">
-      {!showSignup ? (
+      {!showDashboard ? (
         <div className="component1">
           <div className="sidepage">
-            <h1>SignIn to</h1>
+            <h1>Sign In to</h1>
             <h3>Lorem ipsum is simply</h3>
-            <p>If you already have an account</p>
-            <p>
-              you can <button onClick={handleLoginClick}>Signup here!</button>
-            </p>
+            <div className="image-section">
+              <p>
+                If you already have an account you can{' '}
+                <button onClick={handleLoginClick}>Register here!</button>
+              </p>
+
+              <img src={img1} alt="myimage" />
+            </div>
           </div>
           <div className="container">
             <div className="header">
@@ -32,14 +40,24 @@ const Login = () => {
               <div className="input">
                 <input type="password" placeholder="Password" />
               </div>
+              <div className="forgett">
+                <p>Forgot Password?</p>
+              </div>
             </div>
             <div className="submit">
-              <button>Login</button>
+              <button onClick={handleLoginClick}>Login</button>
+            </div>
+            <div className="continuewith">
+              <p>or continue with</p>
+              <div className="images-icon">
+                <img src={appleicon} alt="myimage" />
+                <img src={googleicon} alt="myimage" />
+              </div>
             </div>
           </div>
         </div>
       ) : (
-        <Signup />
+        <Dashboard />
       )}
     </div>
   );

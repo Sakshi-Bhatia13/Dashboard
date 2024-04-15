@@ -1,0 +1,109 @@
+.user-dashboard {
+  display: flex;
+}
+
+.side-heading {
+  flex: 1;
+  font-size: 1.2em;
+}
+
+.side-heading li {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.side-heading li:hover {
+  background-color: #ddd;
+}
+
+.content {
+  flex: 3;
+}
+
+.headings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.side-heading ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.overview{
+  margin-top: 15px;
+}
+.cardsSection{
+  display:flex;
+  flex-direction: row;
+  gap:100px;
+  font-size: small;
+}
+.midcard{
+  display:flex;
+  flex-direction:row;
+  gap:30px;
+}
+.recent-transaction{
+  font-size: small;
+}
+.firstrow{
+  display:flex;
+  flex-direction:row;
+  gap:80px;
+}
+.t1{
+  display: flex;
+  flex-direction: row;
+  margin-top: 100;
+}
+.secondrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+.chart-container {
+  flex: 1; 
+  max-width: 50%; 
+  margin-right: 10px; 
+}
+
+.chart-container canvas {
+  width: 100%;
+}
+.thirdrow{
+  display: flex;
+  flex-direction: row;
+}
+.person{
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+}
+@media screen and (min-width: 768px) {
+  .user-dashboard {
+    flex-direction: row;
+  }
+  .overview{
+    flex-direction: column;
+  }
+
+  .content {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+
+  .chart-container {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .content {
+    margin-top: 0;
+  }
+
+  .chart-container {
+    margin-bottom: 0;
+  }
+}

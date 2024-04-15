@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './LoginSignup.css';
-import Login from './Login'; // Import your Login component
+import Login from './Login'; 
+import img1 from './img1.jpg';
 
 const Signup = () => {
   const [showLogin, setShowLogin] = useState(false);
 
   const handleLoginClick = () => {
-    setShowLogin(true);
+    setShowLogin(!showLogin); 
   };
 
   return (
@@ -14,13 +15,16 @@ const Signup = () => {
       {!showLogin ? (
         <div className="component1">
           <div className="sidepage">
-            <h1>SignUp to</h1>
+            <h1>Sign Up to</h1>
             <h3>Lorem ipsum is simply</h3>
-            <p>If you already have an account</p>
-            <p>
-              you can <button onClick={handleLoginClick}>Login here!</button>
-            </p>
+            <div className="image-section">
+            <p>If you already have an account you can <button onClick={handleLoginClick}>Login here!</button></p>
+            <img src={img1} alt="myimage" />
           </div>
+          </div>
+          {/* <div className="image">
+            <img src={img1} alt="myimage" />
+          </div> */}
           <div className="container">
             <div className="header">
               <div className="text">Sign Up</div>
